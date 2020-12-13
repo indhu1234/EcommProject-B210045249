@@ -193,17 +193,31 @@ public class ProductController
 		return "ProductDisplay";
 	}
 	
-	@RequestMapping(value="/totalProductDisplay/{productId}")
-	public String totalProductDisplay(@PathVariable("productId")int productId,Model m)
+	@RequestMapping(value="/totalProductDisplay/{prodid}")
+	public String totalProductDisplay(@PathVariable("prodid")int productId,Model m)
 	{
 		Product product1=productDAO.getProduct(productId);
 		m.addAttribute("product", product1);
+		List<Product> productList=productDAO.listProducts();
+		m.addAttribute("productList", productList);
 		
 		List<Category> categoryList=categoryDAO.listCategories();
 		m.addAttribute("categoryList",this.getCategoryList(categoryList));
 		
-		return "TotalProductDisplay";
+		return "allProducts";
 	}
 
+	@RequestMapping(value="/allproducts")
+	public String Allproducts(Model m)
+	{
+		List<Product> productList=productDAO.listProducts();
+		m.addAttribute("productList", productList);
+		
+		List<Category> categoryList=categoryDAO.listCategories();
+		m.addAttribute("categoryList",this.getCategoryList(categoryList));
+		
+		return "productDisplay";
+	}	
+	
 	
 }

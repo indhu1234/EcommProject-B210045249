@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.org.Model.Category;
 import com.org.Model.Product;
 import com.org.Model.Supplier;
+import com.org.Model.UserDetail;
 @Configuration
 @EnableTransactionManagement
 /*@ComponentScan("com.org")*/
@@ -52,6 +53,7 @@ public class DBConfig
 		factory1.addAnnotatedClass(Category.class);
         factory1.addAnnotatedClass(Supplier.class);
 		factory1.addAnnotatedClass(Product.class);
+		factory1.addAnnotatedClass(UserDetail.class);
 		SessionFactory sessionFactory=factory1.buildSessionFactory();
 			
 		System.out.println("Session is created");
