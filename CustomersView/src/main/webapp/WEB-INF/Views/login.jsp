@@ -1,20 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<h1>Login Page</h1>
-<form action="<c:url value='loginSuccess'></c:url>" method="post">
-<pre>
-UserName : <input type="text" name="user">
-Password : <input type="password" name="password">
-<input type="submit" value="Login">
-</pre>
+<%@include file="menus.jsp" %>
+ 
+<form action="perform_login" method="post">
+<table class="table table-bordered">
+	<tr>
+		<td colspan="2"><center> Sign In  </center></td>
+	</tr>
+	<tr>
+		<td>User Name</td>
+		<td><input type="text" name="username"/></td>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<td><input type="password" name="password"/></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<center>
+				<input type="submit" value="Sign In" class="btn btn-info"/>
+			</center>
+		</td>
+	</tr>
+</table>
 </form>
+
 </body>
 </html>

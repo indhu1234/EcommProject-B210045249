@@ -18,9 +18,16 @@
 <nav>
 <ul>
 <li><a href="<c:url value='home'></c:url>">Home</a>
-<li><a href="<c:url value='category'></c:url>">Manage Category</a>
+<c:if test="${sessionScope.loggedIn}"> 
+     <c:if test="${sessionScope.role=='ROLE_ADMIN'}"> 
+      		<li><a href="category">Manage Category</a></li>
+      		<li><a href="product">Manage Product</a></li>
+      </c:if>
+    </c:if> 
+<%-- <li><a href="<c:url value='category'></c:url>">Manage Category</a>
 <li><a href="<c:url value='product'></c:url>">Manage Product</a>
-<li><a href="<c:url value='register'></c:url>">Register</a>
+ --%>
+ <li><a href="<c:url value='register'></c:url>">Register</a>
 <li><a href="<c:url value='login'></c:url>">Login</a>
 <li><a href="<c:url value='allproducts'></c:url>">All Products</a>
 </ul>
