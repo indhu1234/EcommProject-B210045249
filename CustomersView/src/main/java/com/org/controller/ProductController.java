@@ -77,7 +77,6 @@ public class ProductController
 		//Image Adding
 		
 		String imagePath="\\indhu\\CDT_DT\\B2028940\\CustomersView\\src\\main\\webapp\\resources\\images\\";
-		//String imagePath="C:\\CDTJE-S190126-222-P1\\GadgetFrontend\\src\\main\\webapp\\resources\\images\\";
 		imagePath=imagePath+String.valueOf(product.getProdid())+".jpg";
 		
 		File imageFile=new File(imagePath);
@@ -190,7 +189,7 @@ public class ProductController
 		List<Category> categoryList=categoryDAO.listCategories();
 		m.addAttribute("categoryList",this.getCategoryList(categoryList));
 		
-		return "ProductDisplay";
+		return "productDisplay";
 	}
 	
 	@RequestMapping(value="/totalProductDisplay/{prodid}")
