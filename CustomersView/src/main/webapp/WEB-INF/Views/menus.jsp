@@ -27,7 +27,13 @@
  --%>
  <li><a href="<c:url value='register'></c:url>">Register</a>
 <li><a href="<c:url value='login'></c:url>">Login</a>
-<li><a href="<c:url value='allproducts'></c:url>">All Products</a>
+<c:if test="${sessionScope.loggedIn}"> 
+     <c:if test="${sessionScope.role=='ROLE_USER'}"> 
+      		<li><a href="<c:url value='allproducts'></c:url>">All Products</a>
+      </c:if>
+    </c:if> 
+
+
 </ul>
 </nav>
 </body>
